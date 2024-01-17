@@ -81,6 +81,20 @@
                     <!--[html-partial:include:{"file":"partials/_subheader/subheader-v6.html"}]/-->
                     @include('components.dashboard._subheader.subheader-v6')
 
+                    @if (session('message'))
+                        <div class="row mb-2">
+                            <div class="col-lg-12">
+                                <div class="alert alert-success" role="alert">{{ session('message') }}</div>
+                            </div>
+                        </div>
+                    @endif
+                    @if (session('failed'))
+                        <div class="row mb-2">
+                            <div class="col-lg-12">
+                                <div class="alert alert-success" role="alert">{{ session('failed') }}</div>
+                            </div>
+                        </div>
+                    @endif
                     @yield('content')
                 </div>
 
