@@ -11,7 +11,7 @@ class UserProfileController extends Controller
      */
     public function index()
     {
-        return view('profile.index');
+        return view('auth.profile.index');
     }
 
     /**
@@ -51,7 +51,8 @@ class UserProfileController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        auth()->user()->update($request->only('password'));
+        return back()->with('success', 'Berhasil Mengubah Password!');
     }
 
     /**

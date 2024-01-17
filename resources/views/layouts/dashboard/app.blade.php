@@ -35,7 +35,7 @@
     <!--begin::Layout Themes(used by all pages)-->
 
     <!--end::Layout Themes-->
-    <link rel="shortcut icon" href="{{ asset('assets/media/logos/favicon.ico') }}" />
+    <link rel="shortcut icon" href="{{ asset('assets/segitigabaru.png') }}" />
 </head>
 
 <!--end::Head-->
@@ -177,6 +177,44 @@
     <script src="{{ asset('assets/js/pages/crud/datatables/data-sources/html.js?v=7.0.5') }}"></script>
     <!--begin::Page Scripts(used by this page)-->
     <script src="{{ asset('assets/js/pages/widgets.js') }}"></script>
+    <script>
+        $(function() {
+            let selectAllButtonTrans = '{{ trans('global.select_all') }}'
+            let selectNoneButtonTrans = '{{ trans('global.deselect_all') }}'
+
+            let languages = {
+                'id': 'https://cdn.datatables.net/plug-ins/1.10.19/i18n/Indonesian.json'
+            };
+
+            $.extend(true, $.fn.dataTable.Buttons.defaults.dom.button, {
+                className: 'btn'
+            })
+            $.extend(true, $.fn.dataTable.defaults, {
+                language: {
+                    url: languages['{{ app()->getLocale() }}']
+                },
+                columnDefs: [{
+                    orderable: false,
+                    className: 'select-checkbox',
+                    targets: 0
+                }, {
+                    orderable: false,
+                    searchable: false,
+                    targets: -1
+                }],
+                select: {
+                    style: 'multi+shift',
+                    selector: 'td:first-child'
+                },
+                order: [],
+                scrollX: true,
+                pageLength: 100,
+                dom: 'lBfrtip<"actions">',
+            });
+
+            $.fn.dataTable.ext.classes.sPageButton = '';
+        });
+    </script>
     @yield('scripts')
     <!--end::Page Scripts-->
 </body>

@@ -61,7 +61,11 @@ class RouteSeeder extends Seeder
             [
                 'route' => 'profile.index',
                 'permission_name' => 'profile_index'
-            ]
+            ],
+            [
+                'route' => 'setting.update',
+                'permission_name' => 'setting_update'
+            ],
         ]);
 
         // Menu Group Management

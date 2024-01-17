@@ -24,7 +24,7 @@ class RoleSeeder extends Seeder
         $admin = Role::create(['name' => 'Admin']);
 
         $superadmin->givePermissionTo(Permission::all());
-        $admin->givePermissionTo(['general', 'dashboard_index', 'profile_index']);
+        $admin->givePermissionTo(['general', 'dashboard_index', 'profile_index', 'profile_update']);
 
         User::firstWhere('email', 'superadmin@gmail.com')->assignRole('Super Admin');
         User::firstWhere('email', 'admin@gmail.com')->assignRole('Admin');

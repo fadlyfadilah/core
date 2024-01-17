@@ -39,6 +39,7 @@ class PermissionSeeder extends Seeder
 
         // User Profile
         Permission::create(['name' => 'profile_index']);
+        Permission::create(['name' => 'profile_update']);
 
         // Menu Management Group
         Permission::create(['name' => 'menu_index']);

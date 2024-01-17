@@ -27,11 +27,12 @@ use Illuminate\Support\Facades\Route;
 Route::permanentRedirect('/', '/login');
 
 Route::group(['middleware' => ['web', 'auth', 'verified']], function () {
+
     Route::resource('dashboard', DashboardController::class)->only('index');
     Route::resource('user', UserManagementController::class)->only('index', 'store', 'update', 'destroy');
-    // Route::prefix('user')->group(function () {
-    //     Route::resource('profile', UserProfileController::class)->only('index');
-    // });
+    Route::prefix('user')->group(function () {
+        Route::resource('profile', UserProfileController::class)->only('index');
+    });
     Route::resource('setting', SettingController::class)->only('index', 'update');
 
     Route::resource('route', RouteController::class);

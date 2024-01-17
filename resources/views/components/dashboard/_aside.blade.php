@@ -9,7 +9,7 @@
 
             <!--begin::Logo-->
             <a href="index.html">
-                <img alt="Logo" src="{{ asset('assets/media/logos/logo-letter-2.png') }}" class="max-h-30px" />
+                <img alt="Logo" src="{{ asset('assets/logobaru.png') }}" class="max-h-30px" />
             </a>
 
             <!--end::Logo-->
@@ -53,6 +53,16 @@
         <!--end::Nav Wrapper-->
         <!--begin::Footer-->
         <div class="aside-footer d-flex flex-column align-items-center flex-column-auto py-4 py-lg-10">
+            <a href="{{ route('profile.index') }}"
+                class="btn btn-icon btn-clean btn-lg w-40px h-40px" data-toggle="tooltip" data-placement="right"
+                data-container="body" data-boundary="window" title="Profile">
+                <span class="symbol symbol-30 symbol-lg-40">
+                    <span class="svg-icon svg-icon-xl">
+                        <i class="flaticon2-user"></i>
+                    </span>
+
+                </span>
+            </a>
             <!--begin::Logout-->
             <a href="#" onclick="event.preventDefault(); document.getElementById('form-logout').submit()"
                 class="btn btn-icon btn-clean btn-lg w-40px h-40px" data-toggle="tooltip" data-placement="right"

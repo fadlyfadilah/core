@@ -31,7 +31,7 @@ class MenuItemSeeder extends Seeder
 
         MenuItem::create([
             'name' => 'User Management',
-            'icon' => 'flaticon2-gear',
+            'icon' => 'flaticon2-user',
             'route' => 'user.index',
             'permission_name' => 'user_index',
             'menu_group_id' => $setting->id,
@@ -40,7 +40,7 @@ class MenuItemSeeder extends Seeder
 
         MenuItem::create([
             'name' => 'Menu Management',
-            'icon' => 'flaticon2-gear',
+            'icon' => 'flaticon2-menu',
             'route' => 'menu.index',
             'permission_name' => 'menu_index',
             'menu_group_id' => $setting->id,
@@ -49,7 +49,7 @@ class MenuItemSeeder extends Seeder
 
         MenuItem::create([
             'name' => 'Route Management',
-            'icon' => 'flaticon2-gear',
+            'icon' => 'flaticon2-website',
             'route' => 'route.index',
             'permission_name' => 'route_index',
             'menu_group_id' => $setting->id,
@@ -58,7 +58,7 @@ class MenuItemSeeder extends Seeder
 
         MenuItem::create([
             'name' => 'Role Management',
-            'icon' => 'flaticon2-gear',
+            'icon' => 'flaticon2-group',
             'route' => 'role.index',
             'permission_name' => 'role_index',
             'menu_group_id' => $setting->id,
@@ -67,7 +67,7 @@ class MenuItemSeeder extends Seeder
 
         MenuItem::create([
             'name' => 'Permission Management',
-            'icon' => 'flaticon2-gear',
+            'icon' => 'flaticon2-protection',
             'route' => 'permission.index',
             'permission_name' => 'permission_index',
             'menu_group_id' => $setting->id,
