@@ -83,14 +83,21 @@
 
                     @if (session('message'))
                         <div class="row mb-2">
-                            <div class="col-lg-12">
+                            <div class="col-lg-6 offset-1">
                                 <div class="alert alert-success" role="alert">{{ session('message') }}</div>
+                            </div>
+                        </div>
+                    @endif
+                    @if (session('success'))
+                        <div class="row mb-2">
+                            <div class="col-lg-6 offset-1">
+                                <div class="alert alert-success" role="alert">{{ session('success') }}</div>
                             </div>
                         </div>
                     @endif
                     @if (session('failed'))
                         <div class="row mb-2">
-                            <div class="col-lg-12">
+                            <div class="col-lg-6 offset-1">
                                 <div class="alert alert-success" role="alert">{{ session('failed') }}</div>
                             </div>
                         </div>
