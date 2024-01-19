@@ -79,8 +79,7 @@
                                                 </svg>
                                             </span>
                                         </button>
-                                        <a href="#"
-                                            onclick="event.preventDefault(); document.getElementById('modal-form-delete-permission-{{ $permission->id }}').submit()"
+                                        <a href="#" onclick="confirmDelete('{{ $permission->id }}')"
                                             class="btn btn-sm btn-clean btn-icon" title="Delete">
                                             <span class="svg-icon svg-icon-md">
                                                 <svg xmlns="http://www.w3.org/2000/svg"
@@ -121,11 +120,23 @@
     <script src="assets/plugins/custom/datatables/datatables.bundle.js?v=7.0.5"></script>
     <!--end::Page Vendors-->
     <!--begin::Page Scripts(used by this page)-->
-    {{-- <script>
-        $(document).ready(function() {
-            $('.select2').select2();
-        });
-    </script> --}}
+    <script>
+        function confirmDelete(permissionId) {
+            Swal.fire({
+                title: 'Are you sure?',
+                text: 'Kamu tiba bisa mengembalikan ini!',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Ya, Hapus!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    document.getElementById('modal-form-delete-permission-' + permissionId).submit();
+                }
+            });
+        }
+    </script>
     <script>
         $(function() {
             let dtButtons = $.extend(true, [], $.fn.dataTable.defaults.buttons)
